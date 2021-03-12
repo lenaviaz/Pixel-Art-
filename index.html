@@ -1,0 +1,53 @@
+<!-- index.html -  front page of the website @Author Lena Viazmitinov-->
+<!DOCTYPE html lang="en">
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav >
+ 
+    <a href="index.html" style="color: white; text-decoration: none; padding-right: 30px;">Pixel Art</a> 
+    <a href = "tutorial.html" style="color: white; text-decoration: none;"> Website Code Tutorial</a> 
+   
+  </nav>
+ <div style="height: 600px; width: 910px; margin: auto; margin-top: 25px;">
+   <div style="width: 200; float: left;">
+ <button id="undo" class="dropStyle">undo </button><br>
+ <button class="dropStyle"><a href="index.html" style="text-decoration: none; color: white;">New Canvas </a></button>
+ <button class="dropStyle">Color Palate</button>
+ <div style="height:200px;width:200px;border:1px solid rgb(226, 223, 18); overflow:auto; float: left">
+<button id = "red" style="background-color: red;"> </button>
+<button id = "orange" style="background-color: orange;"> </button>
+<button id = "yellow" style="background-color: yellow;"> </button>
+<button id = "green" style="background-color: green;">  </button>
+<button id = "blue" style="background-color: blue;">  </button>
+<button id = "purple" style="background-color: purple"> </button>
+<button id = "pink" Style="background-color: pink"></button>
+<button id = "white" style="background-color: white"> </button>
+<button id = "lblue" style="background-color: lightblue"></button>
+<button id = "black" style="background-color: black"></button>
+<button id = "gray" style="background-color:gray"></button>
+<button id = "brown" style="background-color: brown"></button>
+</div>
+<div class="dropdown">
+<button id = "size" class = "dropStyle"> Brush Size</button>
+<div class="dropdown-content">
+   <button id="size1" class="dropStyle" style="text-decoration: none;">One block</button>
+   <button id="size2" class="dropStyle" style="text-decoration: none;">Two blocks</button>
+   <button id= "size3" class="dropStyle" style="text-decoration: none;">three Blocks</button>
+ </div>
+</div>
+</div>
+
+<canvas id="canvas" width="600px" height="600px" style="background: #fff; margin-top: 40px; display: block;margin: auto; float: left" ></canvas>
+<a id="statusX" style="float:left; color:white; margin-left: 10px;"> Mouse X: </a>
+<a id="statusY" style="float:left; color:white; margin-left: 10px;"> Mouse Y: </a>
+
+</div>
+<!-- javascript code implemented here -->
+<script src='pixel.js'></script>
+
+</body>
+</html>
