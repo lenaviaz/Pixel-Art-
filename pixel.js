@@ -95,56 +95,137 @@ function draw(){
     });
 
     //fill in all the functions, gets called when user clicks on the color
+
+//     <!-------------------- Buttons Row 1     ---------------------------->
+//<---------------------------------------------------------------------------->
+    
     function clickRed(){ 
-        s = "red";
+        s = "#F78181";
     } document.getElementById("red").addEventListener("click", clickRed);
  
     function clickOrange(){ 
-        s = "orange";
+        s = "#F7BE81";
     } document.getElementById("orange").addEventListener("click", clickOrange);
 
     function clickYellow(){ 
-        s = "yellow";
+        s = "#F3F781";
     } document.getElementById("yellow").addEventListener("click", clickYellow);
 
     function clickGreen(){ 
-        s = "green";
+        s = "#9FF781";
     } document.getElementById("green").addEventListener("click", clickGreen);
 
     function clickBlue(){ 
-        s = "blue";
+        s = "#A9F5F2";
     } document.getElementById("blue").addEventListener("click", clickBlue);
 
     function clickPurple(){ 
-        s = "purple";
+        s = "#BCA9F5";
     } document.getElementById("purple").addEventListener("click", clickPurple);
 
-    function clickWhite(){ 
-        s = "white";
-    } document.getElementById("white").addEventListener("click", clickWhite);
-
     function clickBlack(){ 
-        s = "black";
+        s = "#FFFFFF";
     } document.getElementById("black").addEventListener("click", clickBlack);
 
-    function clickBrown(){ 
-        s = "brown";
-    } document.getElementById("brown").addEventListener("click", clickBrown);
-
-    function clickPink(){ 
-        s = "pink";
-    } document.getElementById("pink").addEventListener("click", clickPink);
-
-    function clickGray(){ 
-        s = "gray";
-    } document.getElementById("gray").addEventListener("click", clickGray);
- 
-    function clicklBlue(){ 
-        s = "lightblue";
-    } document.getElementById("lblue").addEventListener("click", clicklBlue);
-
-
+//     <!-------------------- Buttons Row 2---------------------------->
+//<----------------------------------------------------------------------------->
     
+    function clickRed2(){ 
+        s = "#FA5858";
+    } document.getElementById("red2").addEventListener("click", clickRed2);
+ 
+    function clickOrange2(){ 
+        s = "#FAAC58";
+    } document.getElementById("orange2").addEventListener("click", clickOrange2);
+
+    function clickYellow2(){ 
+        s = "#F4FA58";
+    } document.getElementById("yellow2").addEventListener("click", clickYellow2);
+
+    function clickGreen2(){ 
+        s = "#82FA58";
+    } document.getElementById("green2").addEventListener("click", clickGreen2);
+
+    function clickBlue2(){ 
+        s = "#81DAF5";
+    } document.getElementById("blue2").addEventListener("click", clickBlue2);
+
+    function clickPurple2(){ 
+        s = "#9F81F7";
+    } document.getElementById("purple2").addEventListener("click", clickPurple2);
+
+    function clickBlack2(){ 
+        s = "#E6E6E6";
+    } document.getElementById("black2").addEventListener("click", clickBlack2);
+
+//     <!-------------------- Buttons Row 3---------------------------->
+//<--------------------------------------------------------------------------->
+
+    function clickRed3(){ 
+        s = "#FE2E2E";
+    } document.getElementById("red3").addEventListener("click", clickRed3);
+
+    function clickOrange3(){ 
+        s = "#FE9A2E";
+    } document.getElementById("orange3").addEventListener("click", clickOrange3);
+
+     
+    function clickYellow3(){ 
+        s = "#F7FE2E";
+    } document.getElementById("yellow3").addEventListener("click", clickYellow3);
+
+    function clickGreen3(){ 
+        s = "#64FE2E";
+    } document.getElementById("green3").addEventListener("click", clickGreen3);
+
+    function clickBlue3(){ 
+        s = "#2E9AFE";
+    } document.getElementById("blue3").addEventListener("click", clickBlue3);
+
+
+    function clickPurple3(){ 
+        s = "#9A2EFE";
+    } document.getElementById("purple3").addEventListener("click", clickPurple3);
+
+    function clickBlack3(){ 
+        s = "#A4A4A4";
+    } document.getElementById("black3").addEventListener("click", clickBlack3);
+    
+//     <!-------------------- Buttons Row 4     ---------------------------->
+//<------------------------------------------------------------------------>
+
+     function clickRed4(){ 
+        s = "#FF0000";
+    } document.getElementById("red4").addEventListener("click", clickRed4);
+
+    function clickOrange4(){ 
+        s = "#FF8000";
+    } document.getElementById("orange4").addEventListener("click", clickOrange4);
+
+       
+    function clickYellow4(){ 
+        s = "#FFFF00";
+    } document.getElementById("yellow4").addEventListener("click", clickYellow4);
+
+    function clickGreen4(){ 
+        s = "#00FF00";
+    } document.getElementById("green4").addEventListener("click", clickGreen4);
+
+    function clickBlue4(){ 
+        s = "#0000FF";
+    } document.getElementById("blue4").addEventListener("click", clickBlue4);
+
+
+    function clickPurple4(){ 
+        s = "#A901DB";
+    } document.getElementById("purple4").addEventListener("click", clickPurple4);
+
+    function clickBlack4(){ 
+        s = "#848484";
+    } document.getElementById("black4").addEventListener("click", clickBlack4);
+   
+//<------------------------------------------------------------------>
+//<------------------------------------------------------------------->
   
     ctx.canvas.addEventListener('mousedown', function(event){
     
