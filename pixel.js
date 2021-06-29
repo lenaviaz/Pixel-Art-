@@ -1,6 +1,6 @@
 /* pixel.js
  * creates the methods for implementing a grid on a canvas, button functions, and allows user to
- * fill in the grid with different colors, creating a pixel art image
+ * fill in the grid with different colors, creating a pixel art image_
 */
 var size = 15;
 var width = 10*size;
