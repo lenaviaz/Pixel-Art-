@@ -1,6 +1,6 @@
 /* pixel.js
  * creates the methods for implementing a grid on a canvas, button functions, and allows user to
- * fill in the grid with different colors, creating a pixel art image
+ * fill in the grid with different colors, creating a pixel art image_
 */
 var size = 15;
 var width = 10*size;
@@ -52,20 +52,34 @@ function draw(){
     
      function initCanvas(){
 
-        function clickOne(){ 
-            scaleX=1;
-            scaleY=1;
-        } document.getElementById("size1").addEventListener("click", clickOne);
+        var slider = document.getElementById("MySlider");
+        var output = document.getElementById("BrushSize");
+        //output.innerHTML = slider.value; // Display the default slider value
+        
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+          output.innerHTML = "Brush Size: " + slider.value;
 
-        function clickTwo(){ 
-            scaleX=2;
-            scaleY=2;
-        } document.getElementById("size2").addEventListener("click", clickTwo);
+          scaleX=this.value;
+          scaleY=this.value;
 
-        function clickThree(){ 
-            scaleX=3;
-            scaleY=3;
-        } document.getElementById("size3").addEventListener("click", clickThree);
+        }
+
+
+    //    function clickOne(){ 
+    //        scaleX=1;
+      //      scaleY=1;
+        //} document.getElementById("size1").addEventListener("click", clickOne);
+
+        //function clickTwo(){ 
+          //  scaleX=2;
+            //scaleY=2;
+        //} document.getElementById("size2").addEventListener("click", clickTwo);
+
+     //   function clickThree(){ 
+       //     scaleX=3;
+         //   scaleY=3;
+       // } document.getElementById("size3").addEventListener("click", clickThree);
 
     
   
@@ -92,9 +106,45 @@ function draw(){
        //displays coordinate onscreen
         statusX.innerHTML = "MouseX : " + x;
         statusY.innerHTML = "MouseY : " + y;
-    });
+        //Brush Size
 
+        var slider = document.getElementById("mySlider");
+        var out = slider.nodeValue;
+        
+    });
+    
+
+function clickDownload(){
+
+    var canvas = document.getElementById("canvas");
+// Convert the canvas to data
+var image = canvas.toDataURL();
+// Create a link
+var aDownloadLink = document.createElement('a');
+// Add the name of the file to the link
+aDownloadLink.download = 'canvas_image.png';
+// Attach the data to the link
+aDownloadLink.href = image;
+// Get the code to click the download link
+aDownloadLink.click();
     //fill in all the functions, gets called when user clicks on the color
+} document.getElementById("download").addEventListener("click", clickDownload);
+
+  //  function clickDownload(){ 
+    
+   //     ctx.toBlob((blob) => {
+            //console.log(await blob.arrayBuffer());
+           // const timestamp = Date.now().toString();
+        //    const a = document.createElement('a');
+        //    document.body.append(a);
+       //     a.download = 'export-${timestamp}.png';
+     //       a.href = URL.createObjectURL(blob);
+     //       a.click();
+     //       a.remove();
+    
+     //   })
+  //  } document.getElementById("download").addEventListener("click", clickDownload);
+//
 
 //     <!-------------------- Buttons Row 1     ---------------------------->
 //<---------------------------------------------------------------------------->
@@ -224,6 +274,8 @@ function draw(){
         s = "#848484";
     } document.getElementById("black4").addEventListener("click", clickBlack4);
    
+//<------------------------------------------------------------------>
+
 //<------------------------ Buttons Row 5 ------------------------------------------>
 //<------------------------------------------------------------------->
   
@@ -300,6 +352,11 @@ function draw(){
 
 
 
+
+
+
+//<------------------------------------------------------------------->
+  
     ctx.canvas.addEventListener('mousedown', function(event){
     
         var mouseX = event.offsetX;
