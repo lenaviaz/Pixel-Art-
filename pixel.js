@@ -52,20 +52,34 @@ function draw(){
     
      function initCanvas(){
 
-        function clickOne(){ 
-            scaleX=1;
-            scaleY=1;
-        } document.getElementById("size1").addEventListener("click", clickOne);
+        var slider = document.getElementById("MySlider");
+        var output = document.getElementById("BrushSize");
+        //output.innerHTML = slider.value; // Display the default slider value
+        
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+          output.innerHTML = "Brush Size: " + slider.value;
 
-        function clickTwo(){ 
-            scaleX=2;
-            scaleY=2;
-        } document.getElementById("size2").addEventListener("click", clickTwo);
+          scaleX=this.value;
+          scaleY=this.value;
 
-        function clickThree(){ 
-            scaleX=3;
-            scaleY=3;
-        } document.getElementById("size3").addEventListener("click", clickThree);
+        }
+
+
+    //    function clickOne(){ 
+    //        scaleX=1;
+      //      scaleY=1;
+        //} document.getElementById("size1").addEventListener("click", clickOne);
+
+        //function clickTwo(){ 
+          //  scaleX=2;
+            //scaleY=2;
+        //} document.getElementById("size2").addEventListener("click", clickTwo);
+
+     //   function clickThree(){ 
+       //     scaleX=3;
+         //   scaleY=3;
+       // } document.getElementById("size3").addEventListener("click", clickThree);
 
     
   
@@ -92,9 +106,45 @@ function draw(){
        //displays coordinate onscreen
         statusX.innerHTML = "MouseX : " + x;
         statusY.innerHTML = "MouseY : " + y;
-    });
+        //Brush Size
 
+        var slider = document.getElementById("mySlider");
+        var out = slider.nodeValue;
+        
+    });
+    
+
+function clickDownload(){
+
+    var canvas = document.getElementById("canvas");
+// Convert the canvas to data
+var image = canvas.toDataURL();
+// Create a link
+var aDownloadLink = document.createElement('a');
+// Add the name of the file to the link
+aDownloadLink.download = 'canvas_image.png';
+// Attach the data to the link
+aDownloadLink.href = image;
+// Get the code to click the download link
+aDownloadLink.click();
     //fill in all the functions, gets called when user clicks on the color
+} document.getElementById("download").addEventListener("click", clickDownload);
+
+  //  function clickDownload(){ 
+    
+   //     ctx.toBlob((blob) => {
+            //console.log(await blob.arrayBuffer());
+           // const timestamp = Date.now().toString();
+        //    const a = document.createElement('a');
+        //    document.body.append(a);
+       //     a.download = 'export-${timestamp}.png';
+     //       a.href = URL.createObjectURL(blob);
+     //       a.click();
+     //       a.remove();
+    
+     //   })
+  //  } document.getElementById("download").addEventListener("click", clickDownload);
+//
 
 //     <!-------------------- Buttons Row 1     ---------------------------->
 //<---------------------------------------------------------------------------->
@@ -225,6 +275,86 @@ function draw(){
     } document.getElementById("black4").addEventListener("click", clickBlack4);
    
 //<------------------------------------------------------------------>
+
+//<------------------------ Buttons Row 5 ------------------------------------------>
+//<------------------------------------------------------------------->
+  
+    function clickRed5(){ 
+        s = "#8A0808";
+    } document.getElementById("red5").addEventListener("click", clickRed5);
+
+    function clickOrange5(){ 
+        s = "#8A4B08";
+    } document.getElementById("orange5").addEventListener("click", clickOrange5);
+
+    
+    function clickYellow5(){ 
+        s = "#868A08";
+    } document.getElementById("yellow5").addEventListener("click", clickYellow5);
+
+    function clickGreen5(){ 
+        s = "#088A08";
+    } document.getElementById("green5").addEventListener("click", clickGreen5);
+
+    function clickBlue5(){ 
+        s = "#0404B4";
+    } document.getElementById("blue5").addEventListener("click", clickBlue5);
+
+
+    function clickPurple5(){ 
+        s = "#8904B1";
+    } document.getElementById("purple5").addEventListener("click", clickPurple5);
+
+    function clickBlack5(){ 
+        s = "#2E2E2E";
+    } document.getElementById("black5").addEventListener("click", clickBlack5);
+
+
+//<------------------------ Buttons Row 6 ------------------------------------------>
+//<------------------------------------------------------------------->
+ 
+    function clickRed6(){ 
+        s = "#610B0B";
+    } document.getElementById("red6").addEventListener("click", clickRed6);
+
+    function clickOrange6(){ 
+        s = "#8A4B08";
+    } document.getElementById("orange6").addEventListener("click", clickOrange6);
+
+
+    function clickYellow6(){ 
+        s = "#5E610B";
+    } document.getElementById("yellow6").addEventListener("click", clickYellow6);
+
+
+    function clickGreen6(){ 
+        s = "#0B610B";
+    } document.getElementById("green6").addEventListener("click", clickGreen6);
+
+    function clickBlue6(){ 
+        s = "#08088A";
+    } document.getElementById("blue6").addEventListener("click", clickBlue6);
+
+
+    function clickPurple6(){ 
+        s = "#4C0B5F";
+    } document.getElementById("purple6").addEventListener("click", clickPurple6);
+
+
+    function clickBlack6(){ 
+        s = "#000000";
+    } document.getElementById("black6").addEventListener("click", clickBlack6);
+
+//<------------------------     END     ------------------------------------------>
+//<------------------------------------------------------------------->
+
+
+
+
+
+
+
+
 //<------------------------------------------------------------------->
   
     ctx.canvas.addEventListener('mousedown', function(event){
