@@ -1,0 +1,104 @@
+<!-- index.html -  front page of the website @Author Lena Viazmitinov-->
+<!DOCTYPE html lang="en">
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav >
+ 
+    <a href="index.html" style="color: white; text-decoration: none; padding-right: 30px;">Pixel Art</a> 
+    <a href = "tutorial.html" style="color: white; text-decoration: none;"> Website Code Tutorial</a> 
+   
+  </nav>
+ <div style="height: 600px; width: 910px; margin: auto; margin-top: 25px;">
+   <div style="width: 200; float: left;">
+ <button id="undo" class="dropStyle"> Undo </button><br>
+ <button class="dropStyle"><a href="index.html" style="text-decoration: none; color: white;">New Canvas </a></button>
+ <button id = "download" class="dropStyle"> Download </button>
+ <div style="height: 178px;width:200px;border:1px solid rgb(226, 223, 18); overflow:auto; float: left">
+  
+<button id = "red" style="background-color: #F78181;"> </button>
+<button id = "orange" style="background-color: #F7BE81"> </button>
+<button id = "yellow" style="background-color: #F3F781;"> </button>
+<button id = "green" style="background-color: #9FF781;">  </button>
+<button id = "blue" style="background-color: #A9F5F2;">  </button>
+<button id = "purple" style="background-color:#BCA9F5"> </button>
+<button id = "black" style="background-color: #FFFFFF"></button>
+
+<!--------------------Colors Row 2---------------------------->
+
+<button id = "red2" style="background-color: #FA5858;"> </button>
+<button id = "orange2" style="background-color:#FAAC58"> </button>
+<button id = "yellow2" style="background-color: #F4FA58;"> </button>
+<button id = "green2" style="background-color: #82FA58;">  </button>
+<button id = "blue2" style="background-color: #81DAF5;">  </button>
+<button id = "purple2" style="background-color:#9F81F7"> </button>
+<button id = "black2" style="background-color: #E6E6E6"></button>
+
+
+<!--------------------   Colors Row 3   ---------------------------->
+
+<button id = "red3" style="background-color: #FE2E2E;"> </button>
+<button id = "orange3" style="background-color: #FE9A2E"> </button>
+<button id = "yellow3" style="background-color: #F7FE2E;"></button>
+<button id = "green3" style="background-color: #64FE2E;">  </button>
+<button id = "blue3" style="background-color: #2E9AFE;">  </button>
+<button id = "purple3" style="background-color:#9A2EFE"> </button>
+<button id = "black3" style="background-color: #A4A4A4"></button>
+
+<!--------------------   Colors Row 4  edit---------------------------->
+
+<button id = "red4" style="background-color: #FF0000;"> </button>
+<button id = "orange4" style="background-color: #FF8000"> </button>
+<button id = "yellow4" style="background-color: #FFFF00;"></button>
+<button id = "green4" style="background-color: #00FF00;">  </button>
+<button id = "blue4" style="background-color: #0000FF;">  </button>
+<button id = "purple4" style="background-color: #A901DB"> </button>
+<button id = "black4" style="background-color: #848484"></button>
+  
+<!--------------------Colors Row 5--------------------------------------------->
+
+<button id = "red5" style="background-color: #8A0808;"> </button>
+<button id = "orange5" style="background-color: #8A4B08"> </button>
+<button id = "yellow5" style="background-color: #868A08"></button>
+<button id = "green5" style="background-color:#088A08">  </button>
+<button id = "blue5" style="background-color: #0404B4;">  </button>
+<button id = "purple5" style="background-color: #8904B1"> </button>
+<button id = "black5" style="background-color: #2E2E2E"></button>
+
+
+<!---------------------Colors Row 6------------------------------------->
+
+<button id = "red6" style="background-color: #610B0B;"> </button>
+<button id = "orange6" style="background-color: #8A4B08"> </button>
+<button id = "yellow6" style="background-color: #5E610B"></button>
+<button id = "green6" style="background-color:#0B610B">  </button>
+<button id = "blue6" style="background-color: #08088A;">  </button>
+<button id = "purple6" style="background-color: #4C0B5F"> </button>
+<button id = "black6" style="background-color: #000000"></button>
+
+
+<!---------------------------------------------------------------------->
+
+</div>
+
+
+<!-- brush size slider-->
+<div class="slidecontainer">
+  <input type="range" min="1" max="5" value="1" class="slider" id="MySlider">
+  <a id="BrushSize" style="float:left; color:white; margin-top: 10px;"> Brush Size: </a>
+</div>
+</div>
+
+<canvas id="canvas" width="600px" height="600px" style="background: #fff; margin-top: 40px; display: block;margin: auto; float: left" ></canvas>
+<a id="statusX" style="float:left; color:white; margin-left: 10px;"> Mouse X: </a>
+<a id="statusY" style="float:left; color:white; margin-left: 10px;"> Mouse Y: </a>
+
+</div>
+<!-- javascript code implemented here -->
+<script src='pixel.js'></script>
+
+</body>
+</html>
