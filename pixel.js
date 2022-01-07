@@ -11,6 +11,8 @@ var isDrawing;
 var scaleX = 1;
 var scaleY = 1;
 var undoArray = [];
+var redoArray = [];
+var hasDrawn = false;
 
 window.onload = function() {
 //canvas element 
@@ -348,13 +350,6 @@ aDownloadLink.click();
 //<------------------------     END     ------------------------------------------>
 //<------------------------------------------------------------------->
 
-
-
-
-
-
-
-
 //<------------------------------------------------------------------->
   
     ctx.canvas.addEventListener('mousedown', function(event){
@@ -364,7 +359,8 @@ aDownloadLink.click();
         var fx = ~~ (mouseX / size);
         var fy = ~~ (mouseY / size);
 
-        if(undoArray[undoArray.length-1] != 'd') undoArray[undoArray.length] = 'd';
+        if(undoArray[undoArray.length-1] != 'd') 
+        undoArray[undoArray.length] = 'd';
         undoArray[undoArray.length] = scaleX+''+(fx+10)+''+(fy+10)+s;
 
        
@@ -399,39 +395,106 @@ aDownloadLink.click();
 
       isDrawing = false;
 
-      
-
- 
-
     });
 
-    function clickUndo(){ 
+        function clickUndo(){ 
 
-//        for(a=undoArray.length-1; undoArray[a] && a>0; a--){alert(undoArray[a])} 
+        //        for(a=undoArray.length-1; undoArray[a] && a>0; a--){alert(undoArray[a])} 
+                
+                for(a=undoArray.length-1; undoArray[a] != 'd' && a>0; a--){
+                
+                    redoArray.push(undoArray[undoArray.length - 1]);
+                    undoArray.pop();
+                } 
+                undoArray.pop();
+               
+               // alert(undoArray.length)
+                
+               draw();
+                for(a=0; a<undoArray.length; a++){
+               
         
-        for(a=undoArray.length-1; undoArray[a] != 'd' && a>0; a--){
+                      var x=undoArray[a].toString();
+                      var paintX = x.substring(1,3);
+                      var paintNumX=parseInt(paintX) - 10;
+        
+                      var y=undoArray[a].toString();
+                      var paintY = y.substring(3,5);
+                      var paintNumY=parseInt(paintY) - 10;
+        
+                      var s=undoArray[a].toString();
+                      var paintS = s.substring(5);
+        
+                      var undoSize=undoArray[a].toString();
+                      //var paintSize= undoSize.substring(0,1);
+                      //var paintSizeNum=parseInt(paintSize);
+        
+                      scaleY=scaleX=parseInt(undoSize.substring(0,1));
+                
+                      
+                       
+                    fill(paintS, paintNumX, paintNumY);
+                    
+                      //  alert(x,y,s,undosize)
+                    }
+                //   var x=undoArray[5].toString();
+                  //  }
+        
+               // var stringX = x.substring(0,2);
+                
+               // y=undoArray[undoArray.length-2].toString.substring(2,4);
+              //   s=undoArray[undoArray.length-2].toString.substring(4);
+             //  alert(scaleX);
+              //  fill()
+        
             
-            undoArray.pop();
-        } 
-        undoArray.pop();
-       // alert(undoArray.length)
+            } document.getElementById("undo").addEventListener("click", clickUndo);
         
-       draw();
+
+    function clickRedo(){
+
+        draw();
+
         for(a=0; a<undoArray.length; a++){
        
 
-              var x=undoArray[a].toString();
+            var x=undoArray[a].toString();
+            var paintX = x.substring(1,3);
+            var paintNumX=parseInt(paintX) - 10;
+
+            var y=undoArray[a].toString();
+            var paintY = y.substring(3,5);
+            var paintNumY=parseInt(paintY) - 10;
+
+            var s=undoArray[a].toString();
+            var paintS = s.substring(5);
+
+            var undoSize=undoArray[a].toString();
+            //var paintSize= undoSize.substring(0,1);
+            //var paintSizeNum=parseInt(paintSize);
+
+            scaleY=scaleX=parseInt(undoSize.substring(0,1));
+      
+            
+             
+          fill(paintS, paintNumX, paintNumY);
+            //  alert(x,y,s,undosize)
+          }
+
+        for(a=0; a<redoArray.length; a++){
+    
+              var x= redoArray[a].toString();
               var paintX = x.substring(1,3);
               var paintNumX=parseInt(paintX) - 10;
 
-              var y=undoArray[a].toString();
+              var y= redoArray[a].toString();
               var paintY = y.substring(3,5);
               var paintNumY=parseInt(paintY) - 10;
 
-              var s=undoArray[a].toString();
+              var s= redoArray[a].toString();
               var paintS = s.substring(5);
 
-              var undoSize=undoArray[a].toString();
+              var undoSize= redoArray[a].toString();
               //var paintSize= undoSize.substring(0,1);
               //var paintSizeNum=parseInt(paintSize);
 
@@ -440,24 +503,30 @@ aDownloadLink.click();
               
                
             fill(paintS, paintNumX, paintNumY);
-            
-              //  alert(x,y,s,undosize)
-            }
-        //   var x=undoArray[5].toString();
-          //  }
-
-       // var stringX = x.substring(0,2);
         
-       // y=undoArray[undoArray.length-2].toString.substring(2,4);
-      //   s=undoArray[undoArray.length-2].toString.substring(4);
-     //  alert(scaleX);
-      //  fill()
-
-    
-    } document.getElementById("undo").addEventListener("click", clickUndo);
+              //  alert(x,y,s,undosize)
+            } 
 
 
 
+           // if(undoArray[undoArray.length-1] != 'd') undoArray[undoArray.length] = 'd';
+       // undoArray.push('d');
+       // undoArray.push(3+''+(15+10)+''+(15+10)+'red');
+       if(undoArray[undoArray.length-1] != 'd') 
+        undoArray[undoArray.length] = 'd';
+        for(a=0; a < redoArray.length; a++)
+        undoArray.push(redoArray[a]);
+
+        for(a=0; a < redoArray.length; a++)
+        undoArray.push(redoArray[a]);
+
+                
+        
+          //  redoArray = [];
+
+    } document.getElementById("redo").addEventListener("click", clickRedo);
+      
+   
 
 }
 window.addEventListener('load', function(event) {
