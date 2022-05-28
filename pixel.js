@@ -366,6 +366,9 @@ aDownloadLink.click();
 
         function clickUndo(){ 
 
+        if(drawStack.length > 0){
+        
+
         //        for(a=drawStack.length-1; drawStack[a] && a>0; a--){alert(drawStack[a])} 
         redoArray.push('d');
                 for(a=drawStack.length-1; drawStack[a] != 'd' && a>0; a--){
@@ -402,14 +405,13 @@ aDownloadLink.click();
                     fill(paintS, paintNumX, paintNumY);
                     
                     }
-            
+                }
             } document.getElementById("undo").addEventListener("click", clickUndo);
         
 
     function clickRedo(){
 
-    //draw();
-
+    if(redoArray.length > 0){
     drawStack.push('d');
     //redoArray.pop();
 
@@ -447,10 +449,9 @@ aDownloadLink.click();
       
       }
 
-
+    }
     } document.getElementById("redo").addEventListener("click", clickRedo);
-      
-   
+    
 
 }
 window.addEventListener('load', function(event) {
